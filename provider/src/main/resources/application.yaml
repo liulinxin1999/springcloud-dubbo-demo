@@ -8,10 +8,20 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: 23456789
+    password: root
     url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
 
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.sise.entities
+
+dubbo:
+  application:
+    logger: slf4j
+    name: DemoApplication
+  registry:
+    address: zookeeper://${zookeeper.address:127.0.0.1}:2181
+  protocol:
+    name: tri
+    port: 50051
