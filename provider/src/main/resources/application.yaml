@@ -3,13 +3,13 @@ server:
 
 spring:
   application:
-    name: consumer
+    name: provider
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
-    url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3307/springcloud?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
 
 
 mybatis:
@@ -19,7 +19,7 @@ mybatis:
 dubbo:
   application:
     logger: slf4j
-    name: DemoApplication
+    name: providerApplication
   registry:
     address: zookeeper://${zookeeper.address:127.0.0.1}:2181
   protocol:

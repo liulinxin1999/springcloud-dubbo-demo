@@ -1,7 +1,7 @@
 package org.licode.provider.service;
 
 import org.apache.dubbo.config.annotation.DubboService;
-import org.licode.provider.api.DemoService;
+import org.licode.service.DemoService;
 
 /**
  * @author : by liulinxin
@@ -11,4 +11,8 @@ import org.licode.provider.api.DemoService;
 
 @DubboService
 public class DemoServiceImpl implements DemoService {
+    @Override
+    public String sayHello(String name) {
+        return "Hello " + name;
+    }
 }
